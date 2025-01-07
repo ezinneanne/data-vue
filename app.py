@@ -2,9 +2,13 @@ import os
 import pandas as pd
 import joblib
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 # Create Flask app
 app = Flask(__name__)
+
+# Enable CORS
+CORS(app)
 
 # Load the model, scaler, and label encoders
 MODEL_PATH = os.path.join(os.getcwd(), "logistic_regression_model.pkl")
